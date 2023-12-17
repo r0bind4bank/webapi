@@ -1,0 +1,22 @@
+﻿@{
+    var product = ViewBag.Product as Product;
+    var comments = ViewBag.Comments as List<Comment>;
+}
+
+<h2>Product Details</h2>
+
+<div>
+    <h3>@product.Title</h3>
+    <p>@product.Description</p>
+    <p>Image URL: @product.ImageUrl</p>
+</div>
+
+<h3>Comments</h3>
+<ul>
+    @foreach (var comment in comments)
+    {
+        <li>
+            <p>@comment.Description</p>
+        </li>
+    }
+</ul>
